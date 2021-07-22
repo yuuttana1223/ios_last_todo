@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,8 +17,8 @@
 		CA7159F526A7F7F4008E8B5B /* IncompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7159F426A7F7F4008E8B5B /* IncompleteViewController.swift */; };
 		CA7159F826A7F80C008E8B5B /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7159F726A7F80C008E8B5B /* CompleteViewController.swift */; };
 		CA7159FB26A7F86D008E8B5B /* ExpiredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7159FA26A7F86D008E8B5B /* ExpiredViewController.swift */; };
-		CA7159FE26A7FDC8008E8B5B /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7159FD26A7FDC8008E8B5B /* TableView.swift */; };
 		CA715A0126A807CC008E8B5B /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA715A0026A807CC008E8B5B /* InputViewController.swift */; };
+		CA94C53926A819A300EC82C3 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA94C53826A819A300EC82C3 /* Todo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +35,8 @@
 		CA7159F426A7F7F4008E8B5B /* IncompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncompleteViewController.swift; sourceTree = "<group>"; };
 		CA7159F726A7F80C008E8B5B /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
 		CA7159FA26A7F86D008E8B5B /* ExpiredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiredViewController.swift; sourceTree = "<group>"; };
-		CA7159FD26A7FDC8008E8B5B /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		CA715A0026A807CC008E8B5B /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		CA94C53826A819A300EC82C3 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		FA43449FD97FA98DF346104B /* Pods-TodoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoApp.debug.xcconfig"; path = "Target Support Files/Pods-TodoApp/Pods-TodoApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,7 +77,6 @@
 				CA7159DA26A7F0A9008E8B5B /* SceneDelegate.swift */,
 				CA7159DE26A7F0A9008E8B5B /* Main.storyboard */,
 				CA715A0026A807CC008E8B5B /* InputViewController.swift */,
-				CA7159FD26A7FDC8008E8B5B /* TableView.swift */,
 				CA7159F426A7F7F4008E8B5B /* IncompleteViewController.swift */,
 				CA7159F726A7F80C008E8B5B /* CompleteViewController.swift */,
 				CA7159FA26A7F86D008E8B5B /* ExpiredViewController.swift */,
@@ -85,6 +84,7 @@
 				CA7159E326A7F0B3008E8B5B /* LaunchScreen.storyboard */,
 				CA7159E626A7F0B3008E8B5B /* Info.plist */,
 				CA7159F126A7F7D0008E8B5B /* ListViewController.swift */,
+				CA94C53826A819A300EC82C3 /* Todo.swift */,
 			);
 			path = TodoApp;
 			sourceTree = "<group>";
@@ -103,7 +103,6 @@
 				FA43449FD97FA98DF346104B /* Pods-TodoApp.debug.xcconfig */,
 				3B40FCB280A281EE36862D37 /* Pods-TodoApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -225,7 +224,7 @@
 				CA7159F526A7F7F4008E8B5B /* IncompleteViewController.swift in Sources */,
 				CA7159D926A7F0A9008E8B5B /* AppDelegate.swift in Sources */,
 				CA715A0126A807CC008E8B5B /* InputViewController.swift in Sources */,
-				CA7159FE26A7FDC8008E8B5B /* TableView.swift in Sources */,
+				CA94C53926A819A300EC82C3 /* Todo.swift in Sources */,
 				CA7159DB26A7F0A9008E8B5B /* SceneDelegate.swift in Sources */,
 				CA7159F826A7F80C008E8B5B /* CompleteViewController.swift in Sources */,
 				CA7159F226A7F7D0008E8B5B /* ListViewController.swift in Sources */,
@@ -378,6 +377,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TodoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -397,6 +397,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TodoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
