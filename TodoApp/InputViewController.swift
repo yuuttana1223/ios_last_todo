@@ -18,8 +18,10 @@ class InputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textField.delegate = self
         datePicker.setDate(Date(), animated: true)
         datePicker.preferredDatePickerStyle = .wheels
+        
     }
     
     
@@ -43,5 +45,12 @@ class InputViewController: UIViewController {
             }
             dismiss(animated: true, completion: nil)
         }
+    }
+}
+
+extension InputViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+        textField.resignFirstResponder()
+        return true
     }
 }

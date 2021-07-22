@@ -17,9 +17,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3kl-wt-goC">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPH-d4-37x">
+                                <rect key="frame" x="0.0" y="34" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="未完了" id="DS3-E8-Aws">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Joi-Tn-TwK">
+                                            <connections>
+                                                <action selector="editTask:" destination="z2k-uG-MMR" id="j0U-5r-byd"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0uB-Dq-17H">
+                                            <connections>
+                                                <segue destination="PG9-Wx-X4s" kind="presentation" modalPresentationStyle="fullScreen" id="Cv9-tI-Y1c"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="q0D-Xp-fPj">
+                                <rect key="frame" x="0.0" y="78" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3kl-wt-goC">
                                 <rect key="frame" x="0.0" y="130" width="414" height="750"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="SHO-Lg-NqZ" detailTextLabel="RcY-YT-EuQ" style="IBUITableViewCellStyleSubtitle" id="w93-Du-wA0">
@@ -48,32 +68,21 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zPH-d4-37x">
-                                <rect key="frame" x="0.0" y="34" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="未完了" id="DS3-E8-Aws">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Joi-Tn-TwK">
-                                            <connections>
-                                                <action selector="editTask:" destination="z2k-uG-MMR" id="j0U-5r-byd"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0uB-Dq-17H">
-                                            <connections>
-                                                <segue destination="PG9-Wx-X4s" kind="presentation" modalPresentationStyle="fullScreen" id="Cv9-tI-Y1c"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <searchBar contentMode="redraw" fixedFrame="YES" text="" translatesAutoresizingMaskIntoConstraints="NO" id="q0D-Xp-fPj">
-                                <rect key="frame" x="0.0" y="78" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HNh-t0-JjH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="q0D-Xp-fPj" firstAttribute="top" secondItem="zPH-d4-37x" secondAttribute="bottom" id="4r4-zP-vc3"/>
+                            <constraint firstItem="zPH-d4-37x" firstAttribute="top" secondItem="N9n-rP-OJp" secondAttribute="top" constant="34" id="63O-g2-nd9"/>
+                            <constraint firstItem="zPH-d4-37x" firstAttribute="leading" secondItem="HNh-t0-JjH" secondAttribute="leading" id="D38-yj-DUF"/>
+                            <constraint firstItem="zPH-d4-37x" firstAttribute="trailing" secondItem="HNh-t0-JjH" secondAttribute="trailing" id="DzE-Nk-77O"/>
+                            <constraint firstItem="3kl-wt-goC" firstAttribute="top" secondItem="zPH-d4-37x" secondAttribute="bottom" constant="52" id="Gz8-0X-yXm"/>
+                            <constraint firstItem="3kl-wt-goC" firstAttribute="trailing" secondItem="HNh-t0-JjH" secondAttribute="trailing" id="HhU-Uq-pae"/>
+                            <constraint firstItem="q0D-Xp-fPj" firstAttribute="trailing" secondItem="HNh-t0-JjH" secondAttribute="trailing" id="N7r-pD-lxt"/>
+                            <constraint firstAttribute="bottom" secondItem="3kl-wt-goC" secondAttribute="bottom" constant="16" id="bNs-Br-xog"/>
+                            <constraint firstItem="3kl-wt-goC" firstAttribute="leading" secondItem="HNh-t0-JjH" secondAttribute="leading" id="dbE-9k-Fy7"/>
+                            <constraint firstItem="q0D-Xp-fPj" firstAttribute="leading" secondItem="HNh-t0-JjH" secondAttribute="leading" id="lYe-E7-8h7"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="未完了" id="I9K-th-AD0"/>
                     <connections>
@@ -93,9 +102,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="By2-S5-7TX">
-                                <rect key="frame" x="0.0" y="129" width="414" height="802"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yap-nu-OcU">
+                                <rect key="frame" x="0.0" y="34" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="完了" id="v73-uo-rUj">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Btl-tp-K1r">
+                                            <connections>
+                                                <action selector="editTask:" destination="PCj-Xj-Xhe" id="jNp-Gk-dF3"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="968-YP-T1R">
+                                            <connections>
+                                                <segue destination="PG9-Wx-X4s" kind="presentation" modalPresentationStyle="fullScreen" id="xtv-9e-rSC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="VO8-N0-DzW">
+                                <rect key="frame" x="0.0" y="78" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="By2-S5-7TX">
+                                <rect key="frame" x="0.0" y="129" width="414" height="751"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="MZF-hO-Cb6" detailTextLabel="DsX-RF-FlE" style="IBUITableViewCellStyleSubtitle" id="xZi-6X-NOP">
@@ -124,32 +153,21 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yap-nu-OcU">
-                                <rect key="frame" x="0.0" y="34" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="完了" id="v73-uo-rUj">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Btl-tp-K1r">
-                                            <connections>
-                                                <action selector="editTask:" destination="PCj-Xj-Xhe" id="jNp-Gk-dF3"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="968-YP-T1R">
-                                            <connections>
-                                                <segue destination="PG9-Wx-X4s" kind="presentation" modalPresentationStyle="fullScreen" id="xtv-9e-rSC"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <searchBar contentMode="redraw" fixedFrame="YES" text="" translatesAutoresizingMaskIntoConstraints="NO" id="VO8-N0-DzW">
-                                <rect key="frame" x="0.0" y="78" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="D8f-NJ-XAB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="By2-S5-7TX" firstAttribute="leading" secondItem="D8f-NJ-XAB" secondAttribute="leading" id="1TV-IT-3Xt"/>
+                            <constraint firstAttribute="bottom" secondItem="By2-S5-7TX" secondAttribute="bottom" constant="16" id="B2l-CC-FJq"/>
+                            <constraint firstItem="By2-S5-7TX" firstAttribute="top" secondItem="yap-nu-OcU" secondAttribute="bottom" constant="51" id="DfU-wa-OEh"/>
+                            <constraint firstItem="yap-nu-OcU" firstAttribute="trailing" secondItem="D8f-NJ-XAB" secondAttribute="trailing" id="IZa-ev-qQg"/>
+                            <constraint firstItem="VO8-N0-DzW" firstAttribute="top" secondItem="yap-nu-OcU" secondAttribute="bottom" id="LAH-tG-aqq"/>
+                            <constraint firstItem="yap-nu-OcU" firstAttribute="leading" secondItem="D8f-NJ-XAB" secondAttribute="leading" id="amd-Cr-6zs"/>
+                            <constraint firstItem="VO8-N0-DzW" firstAttribute="leading" secondItem="D8f-NJ-XAB" secondAttribute="leading" id="eVA-Xn-YNL"/>
+                            <constraint firstItem="yap-nu-OcU" firstAttribute="top" secondItem="odE-zf-F6Q" secondAttribute="top" constant="34" id="iat-l0-FGK"/>
+                            <constraint firstItem="VO8-N0-DzW" firstAttribute="trailing" secondItem="D8f-NJ-XAB" secondAttribute="trailing" id="o1T-7y-IUG"/>
+                            <constraint firstItem="By2-S5-7TX" firstAttribute="trailing" secondItem="D8f-NJ-XAB" secondAttribute="trailing" id="o7X-NC-s2x"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="完了" id="m8L-cP-hYt"/>
                     <connections>
@@ -169,9 +187,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A3f-v6-et4">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w97-Qb-0uN">
+                                <rect key="frame" x="0.0" y="34" width="453" height="44"/>
+                                <items>
+                                    <navigationItem title="一覧" id="kgZ-dU-yjE">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="UBC-45-ygK">
+                                            <connections>
+                                                <action selector="editTask:" destination="kIz-aH-nIK" id="PmF-Fg-jM8"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="OTf-E2-5Sy">
+                                            <connections>
+                                                <segue destination="PG9-Wx-X4s" kind="presentation" modalPresentationStyle="fullScreen" id="dXZ-uv-1Qk"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="BPw-bA-lwf">
+                                <rect key="frame" x="0.0" y="78" width="453" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A3f-v6-et4">
                                 <rect key="frame" x="0.0" y="129" width="414" height="684"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="Xh4-xt-fda" detailTextLabel="Rac-kK-na5" style="IBUITableViewCellStyleSubtitle" id="ShN-N9-W5l">
@@ -200,32 +238,21 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w97-Qb-0uN">
-                                <rect key="frame" x="0.0" y="34" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="一覧" id="kgZ-dU-yjE">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="UBC-45-ygK">
-                                            <connections>
-                                                <action selector="editTask:" destination="kIz-aH-nIK" id="PmF-Fg-jM8"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="OTf-E2-5Sy">
-                                            <connections>
-                                                <segue destination="PG9-Wx-X4s" kind="presentation" modalPresentationStyle="fullScreen" id="dXZ-uv-1Qk"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <searchBar contentMode="redraw" fixedFrame="YES" text="" translatesAutoresizingMaskIntoConstraints="NO" id="BPw-bA-lwf">
-                                <rect key="frame" x="0.0" y="78" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tbg-Xe-6Km"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="A3f-v6-et4" firstAttribute="bottom" secondItem="tbg-Xe-6Km" secondAttribute="bottom" id="4Ak-jU-0eO"/>
+                            <constraint firstItem="A3f-v6-et4" firstAttribute="trailing" secondItem="tbg-Xe-6Km" secondAttribute="trailing" id="4lo-dy-LNB"/>
+                            <constraint firstItem="w97-Qb-0uN" firstAttribute="top" secondItem="ULW-8q-PJv" secondAttribute="top" constant="34" id="5FA-SK-EK5"/>
+                            <constraint firstItem="w97-Qb-0uN" firstAttribute="trailing" secondItem="tbg-Xe-6Km" secondAttribute="trailing" id="I3D-nG-oiM"/>
+                            <constraint firstItem="A3f-v6-et4" firstAttribute="leading" secondItem="tbg-Xe-6Km" secondAttribute="leading" id="M4l-fn-CaJ"/>
+                            <constraint firstItem="BPw-bA-lwf" firstAttribute="trailing" secondItem="tbg-Xe-6Km" secondAttribute="trailing" id="QVl-2s-NNs"/>
+                            <constraint firstItem="BPw-bA-lwf" firstAttribute="top" secondItem="w97-Qb-0uN" secondAttribute="bottom" id="Z47-UY-q0k"/>
+                            <constraint firstItem="BPw-bA-lwf" firstAttribute="leading" secondItem="tbg-Xe-6Km" secondAttribute="leading" id="aHE-Kt-wAG"/>
+                            <constraint firstItem="w97-Qb-0uN" firstAttribute="leading" secondItem="tbg-Xe-6Km" secondAttribute="leading" id="bqK-Q5-2tV"/>
+                            <constraint firstItem="A3f-v6-et4" firstAttribute="top" secondItem="w97-Qb-0uN" secondAttribute="bottom" constant="51" id="igC-h0-b6S"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="一覧" id="gyc-jA-BEr"/>
                     <connections>
@@ -265,9 +292,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fSa-Mp-TbF">
-                                <rect key="frame" x="0.0" y="129" width="414" height="814"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ek-Gm-TCp">
+                                <rect key="frame" x="0.0" y="34" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="期限切れ" id="VST-De-Scn">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="xhD-AZ-rbP">
+                                            <connections>
+                                                <action selector="editTask:" destination="b30-0I-IU6" id="GoA-1K-v22"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yWE-TE-iJi">
+                                            <connections>
+                                                <segue destination="PG9-Wx-X4s" kind="presentation" modalPresentationStyle="fullScreen" id="F8k-xI-Wji"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="nQR-2t-zdX">
+                                <rect key="frame" x="0.0" y="78" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fSa-Mp-TbF">
+                                <rect key="frame" x="0.0" y="129" width="414" height="751"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="sip-0X-CXX" detailTextLabel="fJe-LM-m9w" style="IBUITableViewCellStyleSubtitle" id="Ctl-7Q-vxy">
@@ -296,32 +343,21 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ek-Gm-TCp">
-                                <rect key="frame" x="0.0" y="34" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="期限切れ" id="VST-De-Scn">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="xhD-AZ-rbP">
-                                            <connections>
-                                                <action selector="editTask:" destination="b30-0I-IU6" id="GoA-1K-v22"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yWE-TE-iJi">
-                                            <connections>
-                                                <segue destination="PG9-Wx-X4s" kind="presentation" modalPresentationStyle="fullScreen" id="F8k-xI-Wji"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <searchBar contentMode="redraw" fixedFrame="YES" text="" translatesAutoresizingMaskIntoConstraints="NO" id="nQR-2t-zdX">
-                                <rect key="frame" x="0.0" y="78" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cPH-lC-6hn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5ek-Gm-TCp" firstAttribute="top" secondItem="FcB-UZ-m8g" secondAttribute="top" constant="34" id="2Zf-lh-AW6"/>
+                            <constraint firstItem="fSa-Mp-TbF" firstAttribute="trailing" secondItem="cPH-lC-6hn" secondAttribute="trailing" id="CIT-Dp-Gz1"/>
+                            <constraint firstItem="5ek-Gm-TCp" firstAttribute="leading" secondItem="cPH-lC-6hn" secondAttribute="leading" id="KBT-xZ-rT2"/>
+                            <constraint firstItem="nQR-2t-zdX" firstAttribute="top" secondItem="5ek-Gm-TCp" secondAttribute="bottom" id="OVN-Zs-YiR"/>
+                            <constraint firstAttribute="bottom" secondItem="fSa-Mp-TbF" secondAttribute="bottom" constant="16" id="VMt-p9-cyy"/>
+                            <constraint firstItem="fSa-Mp-TbF" firstAttribute="top" secondItem="5ek-Gm-TCp" secondAttribute="bottom" constant="51" id="bl1-Wx-M9s"/>
+                            <constraint firstItem="5ek-Gm-TCp" firstAttribute="trailing" secondItem="cPH-lC-6hn" secondAttribute="trailing" id="eZr-cG-cdU"/>
+                            <constraint firstItem="nQR-2t-zdX" firstAttribute="leading" secondItem="cPH-lC-6hn" secondAttribute="leading" id="lQm-m3-jtV"/>
+                            <constraint firstItem="nQR-2t-zdX" firstAttribute="trailing" secondItem="cPH-lC-6hn" secondAttribute="trailing" id="s1y-sx-0xp"/>
+                            <constraint firstItem="fSa-Mp-TbF" firstAttribute="leading" secondItem="cPH-lC-6hn" secondAttribute="leading" id="zxl-HB-z4O"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="期限切れ" id="rwT-zY-Rcg"/>
                     <connections>
@@ -341,39 +377,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タスク" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdM-yd-mU9">
-                                <rect key="frame" x="30" y="96" width="91" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="やること" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U91-ct-bt7">
-                                <rect key="frame" x="30" y="157" width="354" height="34"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="FF0-IV-IM0">
-                                <rect key="frame" x="0.0" y="313" width="414" height="216"/>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="期限" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuX-lD-hfw">
-                                <rect key="frame" x="30" y="244" width="61" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hc8-k5-gr2">
-                                <rect key="frame" x="170" y="552" width="74" height="48"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <state key="normal" title="追加"/>
-                                <connections>
-                                    <action selector="addTask:" destination="PG9-Wx-X4s" eventType="touchUpInside" id="0Fy-V6-SJt"/>
-                                </connections>
-                            </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPP-kU-Fc4">
-                                <rect key="frame" x="0.0" y="27" width="414" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="HYd-RP-NJP"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="30" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="追加" id="XDp-lC-Ct4">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="ysB-io-dyc">
@@ -384,29 +389,56 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タスク" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdM-yd-mU9">
+                                <rect key="frame" x="30" y="99" width="91" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="やること" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U91-ct-bt7">
+                                <rect key="frame" x="30" y="160" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="FF0-IV-IM0">
+                                <rect key="frame" x="0.0" y="315" width="414" height="216"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hc8-k5-gr2">
+                                <rect key="frame" x="150" y="556" width="114" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="追加"/>
+                                <connections>
+                                    <action selector="addTask:" destination="PG9-Wx-X4s" eventType="touchUpInside" id="0Fy-V6-SJt"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="期限" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuX-lD-hfw">
+                                <rect key="frame" x="30" y="254" width="61" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Z9V-Ek-cvx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vPP-kU-Fc4" firstAttribute="leading" secondItem="wM3-Yg-zdD" secondAttribute="leading" id="97l-SO-v0J"/>
-                            <constraint firstItem="LdM-yd-mU9" firstAttribute="leading" secondItem="U91-ct-bt7" secondAttribute="leading" id="GpL-7I-B3x"/>
-                            <constraint firstAttribute="trailing" secondItem="vPP-kU-Fc4" secondAttribute="trailing" id="IpX-d9-EKj"/>
-                            <constraint firstItem="Z9V-Ek-cvx" firstAttribute="bottom" secondItem="Hc8-k5-gr2" secondAttribute="bottom" constant="262" id="Ja6-2z-rOi"/>
-                            <constraint firstItem="FF0-IV-IM0" firstAttribute="centerX" secondItem="Hc8-k5-gr2" secondAttribute="centerX" id="LTV-Sf-XcE"/>
-                            <constraint firstItem="LdM-yd-mU9" firstAttribute="leading" secondItem="Z9V-Ek-cvx" secondAttribute="leading" constant="30" id="MwJ-mm-znh"/>
-                            <constraint firstItem="vPP-kU-Fc4" firstAttribute="centerX" secondItem="U91-ct-bt7" secondAttribute="centerX" id="PdB-6v-Y9r"/>
-                            <constraint firstItem="vPP-kU-Fc4" firstAttribute="trailing" secondItem="FF0-IV-IM0" secondAttribute="trailing" id="R3h-b8-V4o"/>
-                            <constraint firstItem="vPP-kU-Fc4" firstAttribute="leading" secondItem="FF0-IV-IM0" secondAttribute="leading" id="bhe-al-faN"/>
-                            <constraint firstItem="LdM-yd-mU9" firstAttribute="top" secondItem="vPP-kU-Fc4" secondAttribute="bottom" constant="13" id="cs6-oq-6Tl"/>
-                            <constraint firstItem="FF0-IV-IM0" firstAttribute="top" secondItem="VuX-lD-hfw" secondAttribute="bottom" constant="33" id="lqS-tr-Gdu"/>
-                            <constraint firstItem="VuX-lD-hfw" firstAttribute="top" secondItem="U91-ct-bt7" secondAttribute="bottom" constant="53" id="s06-hr-Do3"/>
-                            <constraint firstItem="U91-ct-bt7" firstAttribute="leading" secondItem="VuX-lD-hfw" secondAttribute="leading" id="sx3-dQ-gsJ"/>
-                            <constraint firstItem="U91-ct-bt7" firstAttribute="top" secondItem="LdM-yd-mU9" secondAttribute="bottom" constant="25" id="uuZ-pj-e8h"/>
-                            <constraint firstItem="Hc8-k5-gr2" firstAttribute="leading" secondItem="Z9V-Ek-cvx" secondAttribute="leading" constant="170" id="vyC-Sw-ifH"/>
-                            <constraint firstItem="Hc8-k5-gr2" firstAttribute="top" secondItem="FF0-IV-IM0" secondAttribute="bottom" constant="23" id="wBx-Js-bZr"/>
+                            <constraint firstItem="FF0-IV-IM0" firstAttribute="leading" secondItem="Z9V-Ek-cvx" secondAttribute="leading" id="7C4-zK-YC4"/>
+                            <constraint firstItem="LdM-yd-mU9" firstAttribute="leading" secondItem="Z9V-Ek-cvx" secondAttribute="leading" constant="30" id="AHt-EW-Qi0"/>
+                            <constraint firstItem="vPP-kU-Fc4" firstAttribute="top" secondItem="wM3-Yg-zdD" secondAttribute="top" constant="30" id="HXC-GX-uhH"/>
+                            <constraint firstItem="FF0-IV-IM0" firstAttribute="top" secondItem="VuX-lD-hfw" secondAttribute="bottom" constant="25" id="HhM-zk-Bdx"/>
+                            <constraint firstItem="Z9V-Ek-cvx" firstAttribute="trailing" secondItem="U91-ct-bt7" secondAttribute="trailing" constant="30" id="Mtz-vY-e33"/>
+                            <constraint firstItem="Z9V-Ek-cvx" firstAttribute="trailing" secondItem="Hc8-k5-gr2" secondAttribute="trailing" constant="150" id="S2y-oU-BAq"/>
+                            <constraint firstItem="vPP-kU-Fc4" firstAttribute="leading" secondItem="Z9V-Ek-cvx" secondAttribute="leading" id="ZlS-LC-TP2"/>
+                            <constraint firstItem="Hc8-k5-gr2" firstAttribute="top" secondItem="FF0-IV-IM0" secondAttribute="bottom" constant="25" id="b8m-Fl-cMP"/>
+                            <constraint firstItem="VuX-lD-hfw" firstAttribute="leading" secondItem="Z9V-Ek-cvx" secondAttribute="leading" constant="30" id="eXW-9y-CQT"/>
+                            <constraint firstItem="FF0-IV-IM0" firstAttribute="trailing" secondItem="Z9V-Ek-cvx" secondAttribute="trailing" id="iMS-tm-Dgm"/>
+                            <constraint firstItem="VuX-lD-hfw" firstAttribute="top" secondItem="U91-ct-bt7" secondAttribute="bottom" constant="60" id="ipr-0c-a9m"/>
+                            <constraint firstItem="Hc8-k5-gr2" firstAttribute="leading" secondItem="Z9V-Ek-cvx" secondAttribute="leading" constant="150" id="kMq-34-Lz5"/>
+                            <constraint firstItem="vPP-kU-Fc4" firstAttribute="trailing" secondItem="Z9V-Ek-cvx" secondAttribute="trailing" id="o2B-l2-jGM"/>
+                            <constraint firstItem="U91-ct-bt7" firstAttribute="top" secondItem="LdM-yd-mU9" secondAttribute="bottom" constant="25" id="uoy-u9-JRs"/>
+                            <constraint firstItem="LdM-yd-mU9" firstAttribute="top" secondItem="vPP-kU-Fc4" secondAttribute="bottom" constant="25" id="y68-KU-yQU"/>
+                            <constraint firstItem="U91-ct-bt7" firstAttribute="leading" secondItem="Z9V-Ek-cvx" secondAttribute="leading" constant="30" id="yFa-CA-7Xz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="SIb-0u-bgR"/>
                     <connections>
                         <outlet property="datePicker" destination="FF0-IV-IM0" id="nWt-Bp-Cpx"/>
                         <outlet property="textField" destination="U91-ct-bt7" id="TNY-Ty-fbV"/>
@@ -418,7 +450,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Cv9-tI-Y1c"/>
+        <segue reference="F8k-xI-Wji"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
